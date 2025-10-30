@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { motion, AnimatePresence } from 'framer-motion'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Products from './components/Products'
@@ -17,12 +18,34 @@ import PolitiqueConfidentialite from './pages/PolitiqueConfidentialite'
 import FAQ from './pages/FAQ'
 import './index.css'
 
+// Variants d'animation globaux simplifiés
+const pageVariants = {
+  initial: {
+    opacity: 0,
+    y: 20
+  },
+  in: {
+    opacity: 1,
+    y: 0
+  },
+  out: {
+    opacity: 0,
+    y: -20
+  }
+}
+
+const pageTransition = {
+  type: "tween",
+  ease: "easeInOut",
+  duration: 0.4
+}
+
 function App() {
   const [theme, setTheme] = useState('light')
   const [isHeaderCompact, setIsHeaderCompact] = useState(false)
 
   useEffect(() => {
-    // Animation au défilement - seulement pour les éléments non visibles initialement
+    // Animation au défilement
     const observerOptions = {
       threshold: 0.1,
       rootMargin: '0px 0px -50px 0px'
@@ -30,15 +53,15 @@ function App() {
     
     const observer = new IntersectionObserver(function(entries) {
       entries.forEach(entry => {
-        if (entry.isIntersecting && !entry.target.classList.contains('visible')) {
+        if (entry.isIntersecting) {
           entry.target.classList.add('visible');
         }
       });
     }, observerOptions);
     
-    // Observer seulement les éléments qui n'ont pas déjà la classe visible
-    const elementsToAnimate = document.querySelectorAll('.product-card:not(.visible), .feature-card:not(.visible), .testimonial:not(.visible)');
-  elementsToAnimate.forEach(el => {
+    // Observer les éléments à animer
+    const elementsToAnimate = document.querySelectorAll('.product-card, .feature-card, .testimonial, .value-item, .stat-card');
+    elementsToAnimate.forEach(el => {
       observer.observe(el);
     });
 
@@ -70,14 +93,19 @@ function App() {
 
   // Composant pour la page d'accueil
   const HomePage = () => (
-    <>
+    <motion.div
+      initial="initial"
+      animate="in"
+      variants={pageVariants}
+      transition={pageTransition}
+    >
       <Hero />
-       <About />
+      <About />
       <Products />
       <Features />
       <Testimonials />
       <Contact />
-    </>
+    </motion.div>
   )
 
   return (
@@ -86,16 +114,84 @@ function App() {
         <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
         <Header isCompact={isHeaderCompact} />
         
-        <main>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/informations" element={<Informations />} />
-            <Route path="/livraison-retours" element={<LivraisonRetours />} />
-            <Route path="/paiement-securise" element={<PaiementSecurise />} />
-            <Route path="/conditions-generales" element={<ConditionsGenerales />} />
-            <Route path="/politique-confidentialite" element={<PolitiqueConfidentialite />} />
-            <Route path="/faq" element={<FAQ />} />
-          </Routes>
+        <main style={{ position: 'relative', zIndex: 1 }}>
+          <AnimatePresence mode="wait">
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/informations" element={
+                <motion.div
+                  key="informations"
+                  initial="initial"
+                  animate="in"
+                  exit="out"
+                  variants={pageVariants}
+                  transition={pageTransition}
+                >
+                  <Informations />
+                </motion.div>
+              } />
+              <Route path="/livraison-retours" element={
+                <motion.div
+                  key="livraison"
+                  initial="initial"
+                  animate="in"
+                  exit="out"
+                  variants={pageVariants}
+                  transition={pageTransition}
+                >
+                  <LivraisonRetours />
+                </motion.div>
+              } />
+              <Route path="/paiement-securise" element={
+                <motion.div
+                  key="paiement"
+                  initial="initial"
+                  animate="in"
+                  exit="out"
+                  variants={pageVariants}
+                  transition={pageTransition}
+                >
+                  <PaiementSecurise />
+                </motion.div>
+              } />
+              <Route path="/conditions-generales" element={
+                <motion.div
+                  key="conditions"
+                  initial="initial"
+                  animate="in"
+                  exit="out"
+                  variants={pageVariants}
+                  transition={pageTransition}
+                >
+                  <ConditionsGenerales />
+                </motion.div>
+              } />
+              <Route path="/politique-confidentialite" element={
+                <motion.div
+                  key="confidentialite"
+                  initial="initial"
+                  animate="in"
+                  exit="out"
+                  variants={pageVariants}
+                  transition={pageTransition}
+                >
+                  <PolitiqueConfidentialite />
+                </motion.div>
+              } />
+              <Route path="/faq" element={
+                <motion.div
+                  key="faq"
+                  initial="initial"
+                  animate="in"
+                  exit="out"
+                  variants={pageVariants}
+                  transition={pageTransition}
+                >
+                  <FAQ />
+                </motion.div>
+              } />
+            </Routes>
+          </AnimatePresence>
         </main>
         
         <Footer />

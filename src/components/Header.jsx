@@ -25,6 +25,7 @@ const Header = ({ isCompact }) => {
           </div>
           <ul className="nav-links">
             <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#apropos">À Propos</a></li>
             <li><a href="#produits">Produits</a></li>
             <li><a href="#atouts">Nos Atouts</a></li>
             <li><a href="#avis">Avis</a></li>

@@ -1,0 +1,42 @@
+.parallax-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.parallax-layer {
+  position: absolute;
+  width: 100%;
+  height: 120%;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(255, 107, 139, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(78, 205, 196, 0.06) 0%, transparent 50%);
+  filter: blur(20px);
+}
+
+.layer-2 {
+  background: 
+    radial-gradient(circle at 60% 30%, rgba(255, 209, 102, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 30% 70%, rgba(42, 45, 52, 0.03) 0%, transparent 50%);
+  filter: blur(15px);
+  transform: translateY(-10%);
+}
+
+/* Désactiver sur mobile pour les performances */
+@media (max-width: 768px) {
+  .parallax-container {
+    display: none;
+  }
+}
+
+/* Accessibilité */
+@media (prefers-reduced-motion: reduce) {
+  .parallax-container {
+    display: none;
+  }
+}

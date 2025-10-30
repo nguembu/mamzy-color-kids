@@ -11,6 +11,11 @@
   --shadow: rgba(0, 0, 0, 0.1);
   --text-light: #666666;
   --border: #E8EAED;
+  
+  /* Variables 3D */
+  --perspective: 1000px;
+  --depth: 100px;
+  --transition-3d: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 [data-theme="dark"] {
@@ -40,6 +45,7 @@ body {
   color: var(--text);
   line-height: 1.6;
   transition: all 0.3s ease;
+  overflow-x: hidden;
 }
 
 .container {
@@ -48,12 +54,13 @@ body {
   margin: 0 auto;
   padding: 0 20px;
 }
+
 /* Scroll behavior */
 html {
   scroll-behavior: smooth;
 }
 
-/* Animations */
+/* Animations de base */
 @keyframes fadeInUp {
   to {
     opacity: 1;
@@ -75,6 +82,110 @@ html {
   }
 }
 
+/* Animations 3D */
+@keyframes float3d {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotateX(0) rotateY(0);
+  }
+  33% {
+    transform: translate3d(10px, -5px, 10px) rotateX(2deg) rotateY(1deg);
+  }
+  66% {
+    transform: translate3d(-5px, 8px, -5px) rotateX(-1deg) rotateY(-2deg);
+  }
+}
+
+@keyframes glow3d {
+  0%, 100% {
+    box-shadow: 
+      0 0 20px rgba(255, 107, 139, 0.3),
+      inset 0 0 20px rgba(255, 255, 255, 0.1);
+    transform: translateZ(0);
+  }
+  50% {
+    box-shadow: 
+      0 0 40px rgba(255, 107, 139, 0.6),
+      inset 0 0 30px rgba(255, 255, 255, 0.2);
+    transform: translateZ(10px);
+  }
+}
+
+@keyframes parallaxFloat {
+  0%, 100% {
+    transform: translateY(0px) translateZ(0px);
+  }
+  50% {
+    transform: translateY(-20px) translateZ(10px);
+  }
+}
+
+/* Classes d'animation réutilisables */
+.float-3d {
+  animation: float3d 6s ease-in-out infinite;
+}
+
+.glow-3d {
+  animation: glow3d 4s ease-in-out infinite;
+}
+
+.parallax-float {
+  animation: parallaxFloat 8s ease-in-out infinite;
+}
+
+.hover-3d {
+  transition: var(--transition-3d);
+  transform-style: preserve-3d;
+}
+
+.hover-3d:hover {
+  transform: 
+    translateY(-10px) 
+    rotateX(5deg) 
+    rotateY(-5deg) 
+    translateZ(20px);
+}
+
+.card-3d {
+  transform-style: preserve-3d;
+  transition: var(--transition-3d);
+  position: relative;
+  perspective: 1000px;
+}
+
+.card-3d::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(255, 107, 139, 0.1) 0%,
+    rgba(78, 205, 196, 0.1) 100%);
+  border-radius: inherit;
+  transform: translateZ(-1px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card-3d:hover::before {
+  opacity: 1;
+}
+
+.card-3d:hover {
+  transform: 
+    translateY(-15px) 
+    rotateX(8deg) 
+    rotateY(-8deg) 
+    translateZ(30px);
+}
+
+/* Styles pour les containers 3D */
+.perspective-container {
+  perspective: var(--perspective);
+  transform-style: preserve-3d;
+}
+
 /* Responsive Breakpoints */
 @media (max-width: 1200px) {
   .container {
@@ -92,6 +203,11 @@ html {
   .container {
     max-width: 720px;
     width: 95%;
+  }
+  
+  /* Réduire les animations 3D sur mobile pour les performances */
+  .card-3d:hover {
+    transform: translateY(-8px) scale(1.02);
   }
 }
 
