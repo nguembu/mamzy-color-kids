@@ -1,4 +1,6 @@
+import { image } from 'framer-motion/m';
 import './Products.css'
+import ParallaxBackground from './ParallaxBackground';
 
 const Products = () => {
   const products = [
@@ -6,7 +8,7 @@ const Products = () => {
       id: 1,
       title: "Cahier de Coloriage Magique",
       description: "Un cahier interactif avec des dessins qui se colorent de manière magique au contact des crayons spéciaux. Stimule la créativité et l'émerveillement.",
-      price: "12,99 €",
+      price: "2000 FCFA",
       color1: "#FF6B8B",
       color2: "#FF8FA3",
       imageText: "🎨 Magique"
@@ -15,16 +17,17 @@ const Products = () => {
       id: 2,
       title: "Kit Créatif Animaux",
       description: "Un ensemble complet pour créer et colorier des animaux fantastiques. Inclut des pochoirs, des autocollants et un guide d'activités.",
-      price: "18,50 €",
+      price: "2500 FCFA",
       color1: "#4ECDC4",
       color2: "#6AD4CD",
-      imageText: "🐾 Animaux"
+      imageText: "🐾 Animaux",
+      image:"/color.jpeg"
     },
     {
       id: 3,
       title: "Album à Dessins Géant",
       description: "Un album format géant avec 100 pages de papier qualité premium pour laisser libre cours à l'imagination des jeunes artistes.",
-      price: "15,75 €",
+      price: "4000 FCFA",
       color1: "#FFD166",
       color2: "#FFD980",
       imageText: "📘 Géant"
@@ -33,7 +36,7 @@ const Products = () => {
       id: 4,
       title: "Coffret Artiste en Herbe",
       description: "Tout le nécessaire pour initier votre enfant aux joies du dessin et de la couleur. Parfait pour les débutants.",
-      price: "24,99 €",
+      price: "10000 FCFA",
       color1: "#2A2D34",
       color2: "#40444D",
       imageText: "🎨 Pro"
@@ -42,7 +45,7 @@ const Products = () => {
       id: 5,
       title: "Cahier d'Activités Éducatives",
       description: "Des jeux éducatifs et des coloriages qui développent la motricité fine et les compétences cognitives des enfants.",
-      price: "14,25 €",
+      price: "3000 FCFA",
       color1: "#FF6B8B",
       color2: "#4ECDC4",
       imageText: "📚 Éducatif"
@@ -51,7 +54,7 @@ const Products = () => {
       id: 6,
       title: "Set de Crayons Écologiques",
       description: "12 crayons de couleur fabriqués à partir de matériaux recyclés. Couleurs vibrantes et respectueuses de l'environnement.",
-      price: "9,99 €",
+      price: "1500 FCFA",
       color1: "#4ECDC4",
       color2: "#FFD166",
       imageText: "✏️ Écolo"
