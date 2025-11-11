@@ -15,7 +15,7 @@ const ConditionsGenerales = () => {
             <div className="info-content">
               <div className="info-card">
                 <p>Les présentes conditions générales de vente régissent les ventes de produits de la société MAMZY COLOR'KIDS, 
-                SAS au capital de 50 000 €, immatriculée au RCS de Paris sous le numéro 123 456 789.</p>
+                SAS au capital de 30 000 FCFA, immatriculée au RCS de Paris sous le numéro 123 456 789.</p>
               </div>
             </div>
           </section>
@@ -25,7 +25,7 @@ const ConditionsGenerales = () => {
             <div className="info-content">
               <div className="info-card">
                 <ul>
-                  <li>Les prix sont indiqués en euros toutes taxes comprises (TTC)</li>
+                  <li>Les prix sont indiqués en FCFA toutes taxes comprises (TTC)</li>
                   <li>Les frais de livraison sont indiqués clairement avant la validation de commande</li>
                   <li>MAMZY COLOR'KIDS se réserve le droit de modifier ses prix à tout moment</li>
                 </ul>

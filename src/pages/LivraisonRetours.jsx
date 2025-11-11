@@ -14,7 +14,7 @@ const LivraisonRetours = () => {
             <h2>🚚 Délais de Livraison</h2>
             <div className="info-content">
               <div className="info-card">
-                <h3>France Métropolitaine</h3>
+                <h3>Cameroun Métropolitaine</h3>
                 <ul>
                   <li><strong>Livraison standard :</strong> 2-3 jours ouvrés</li>
                   <li><strong>Livraison express :</strong> 24-48h</li>
@@ -23,7 +23,7 @@ const LivraisonRetours = () => {
               </div>
               
               <div className="info-card">
-                <h3>Europe</h3>
+                <h3>Afrique</h3>
                 <ul>
                   <li><strong>Livraison standard :</strong> 5-7 jours ouvrés</li>
                   <li><strong>Livraison express :</strong> 3-4 jours ouvrés</li>
@@ -44,21 +44,21 @@ const LivraisonRetours = () => {
             <h2>💰 Frais de Livraison</h2>
             <div className="info-content">
               <div className="info-card">
-                <h3>France Métropolitaine</h3>
+                <h3>Cameroun Métropolitaine</h3>
                 <ul>
-                  <li><strong>Standard :</strong> 4,90 €</li>
-                  <li><strong>Express :</strong> 9,90 €</li>
-                  <li><strong>Point relais :</strong> 3,90 €</li>
-                  <li><strong>Offerte</strong> à partir de 50 € d'achat</li>
+                  <li><strong>Standard :</strong> 1000 FCFA - 2500 FCFA</li>
+                  <li><strong>Express :</strong> 3500 FCFA -5000 FCFA </li>
+                  <li><strong>Point relais :</strong> 4500 FCFA - 7000 FCFA</li>
+                  <li><strong>Offerte</strong> à partir de 20 000 FCFA d'achat</li>
                 </ul>
               </div>
               
               <div className="info-card">
-                <h3>Europe</h3>
+                <h3>Afrique</h3>
                 <ul>
-                  <li><strong>Standard :</strong> 12,90 €</li>
-                  <li><strong>Express :</strong> 19,90 €</li>
-                  <li><strong>Offerte</strong> à partir de 100 € d'achat</li>
+                  <li><strong>Standard :</strong> 20 000 FCFA</li>
+                  <li><strong>Express :</strong> 40 000 FCFA</li>
+                  <li><strong>Offerte</strong> à partir de 100 000 FCFA d'achat</li>
                 </ul>
               </div>
             </div>
