@@ -9,8 +9,7 @@ const Products = () => {
       title: "Cahier de Coloriage Magique",
       description: "Un cahier interactif avec des dessins qui se colorent de manière magique au contact des crayons spéciaux. Stimule la créativité et l'émerveillement.",
       price: "2000 FCFA",
-      color1: "#FF6B8B",
-      color2: "#FF8FA3",
+      image: "/mam1.jpg",
       imageText: "🎨 Magique"
     },
     {
@@ -18,18 +17,15 @@ const Products = () => {
       title: "Kit Créatif Animaux",
       description: "Un ensemble complet pour créer et colorier des animaux fantastiques. Inclut des pochoirs, des autocollants et un guide d'activités.",
       price: "2500 FCFA",
-      color1: "#4ECDC4",
-      color2: "#6AD4CD",
-      imageText: "🐾 Animaux",
-      image:"/color.jpeg"
+      image: "/color.jpeg",
+      imageText: "🐾 Animaux"
     },
     {
       id: 3,
-      title: "Album à Dessins Géant",
-      description: "Un album format géant avec 100 pages de papier qualité premium pour laisser libre cours à l'imagination des jeunes artistes.",
+      title: "Livre de Conte avec coloriage ",
+      description: "Un livre avec des histoires instructif et des dessins  pour laisser libre cours à l'imagination des jeunes artistes.",
       price: "4000 FCFA",
-      color1: "#FFD166",
-      color2: "#FFD980",
+      image: "/mam3.jpg",
       imageText: "📘 Géant"
     },
     {
@@ -37,27 +33,32 @@ const Products = () => {
       title: "Coffret Artiste en Herbe",
       description: "Tout le nécessaire pour initier votre enfant aux joies du dessin et de la couleur. Parfait pour les débutants.",
       price: "10000 FCFA",
-      color1: "#2A2D34",
-      color2: "#40444D",
+      image: "/mam8.png",
       imageText: "🎨 Pro"
     },
     {
       id: 5,
       title: "Cahier d'Activités Éducatives",
-      description: "Des jeux éducatifs et des coloriages qui développent la motricité fine et les compétences cognitives des enfants.",
+      description: "Des jeux éducatifs et des coloriages qui développent la motricité fine et les compétences cognitives des enfants, parfait pour apprendre l'anglais.",
       price: "3000 FCFA",
-      color1: "#FF6B8B",
-      color2: "#4ECDC4",
+      image: "/mam2.jpg", // Vous pouvez réutiliser ou ajouter d'autres images
       imageText: "📚 Éducatif"
     },
     {
       id: 6,
       title: "Set de Crayons Écologiques",
       description: "12 crayons de couleur fabriqués à partir de matériaux recyclés. Couleurs vibrantes et respectueuses de l'environnement.",
-      price: "1500 FCFA",
-      color1: "#4ECDC4",
-      color2: "#FFD166",
+      price: "2500 FCFA",
+      image: "/mam6.png", // Vous pouvez réutiliser ou ajouter d'autres images
       imageText: "✏️ Écolo"
+    },
+    {
+      id: 7,
+      title: "Coloring & Tracing Book",
+      description: "Un livre de coloriage et de traçage axé sur les légumes et les fruits pour apprendre tout en s'amusant.",
+      price: "3000 FCFA",
+      image: "/mam4.jpg", // Vous pouvez réutiliser ou ajouter d'autres images
+      imageText: " 🍎🥦Fruits & Légumes"
     }
   ]
 
@@ -83,7 +84,10 @@ const Products = () => {
                 <div 
                   className="product-image-content"
                   style={{ 
-                    background: `linear-gradient(135deg, ${product.color1}, ${product.color2})`
+                    backgroundImage: `url(${product.image})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat'
                   }}
                 >
                   {product.imageText}
