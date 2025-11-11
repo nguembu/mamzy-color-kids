@@ -55,7 +55,7 @@ const FAQ = () => {
                 <h3>Contactez notre équipe</h3>
                 <p>Notre équipe créative se fera un plaisir de vous répondre dans les plus brefs délais.</p>
                 <div style={{ marginTop: '20px' }}>
-                  <p><strong>📧 Email :</strong> contact@mamzycolorkids.fr</p>
+                  <p><strong>📧 Email :</strong> ornelatindi@gmail.com</p>
                   <p><strong>📞 Téléphone :</strong> +237 6 99 58 42 78</p>
                   <p><strong>🕒 Horaires :</strong> Lun-Ven 9h-18h</p>
                 </div>
