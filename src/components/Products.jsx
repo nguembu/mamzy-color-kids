@@ -8,7 +8,7 @@ const Products = () => {
       id: 1,
       title: "Cahier de Coloriage Magique",
       description: "Un cahier interactif avec des dessins qui se colorent de manière magique au contact des crayons spéciaux. Stimule la créativité et l'émerveillement.",
-      price: "2000 FCFA",
+      price: "1000 FCFA",
       image: "/mam1.jpg",
       imageText: "🎨 Magique"
     },
@@ -16,7 +16,7 @@ const Products = () => {
       id: 2,
       title: "Kit Créatif Animaux",
       description: "Un ensemble complet pour créer et colorier des animaux fantastiques. Inclut des pochoirs, des autocollants et un guide d'activités.",
-      price: "2500 FCFA",
+      price: "1000 FCFA",
       image: "/color.jpeg",
       imageText: "🐾 Animaux"
     },
@@ -24,7 +24,7 @@ const Products = () => {
       id: 3,
       title: "Livre de Conte avec coloriage ",
       description: "Un livre avec des histoires instructif et des dessins  pour laisser libre cours à l'imagination des jeunes artistes.",
-      price: "4000 FCFA",
+      price: "1500 FCFA",
       image: "/mam3.jpg",
       imageText: "📘 Géant"
     },
@@ -40,7 +40,7 @@ const Products = () => {
       id: 5,
       title: "Cahier d'Activités Éducatives",
       description: "Des jeux éducatifs et des coloriages qui développent la motricité fine et les compétences cognitives des enfants, parfait pour apprendre l'anglais.",
-      price: "3000 FCFA",
+      price: "1000 FCFA",
       image: "/mam2.jpg", // Vous pouvez réutiliser ou ajouter d'autres images
       imageText: "📚 Éducatif"
     },
@@ -56,7 +56,7 @@ const Products = () => {
       id: 7,
       title: "Coloring & Tracing Book",
       description: "Un livre de coloriage et de traçage axé sur les légumes et les fruits pour apprendre tout en s'amusant.",
-      price: "3000 FCFA",
+      price: "1000 FCFA",
       image: "/mam4.jpg", // Vous pouvez réutiliser ou ajouter d'autres images
       imageText: " 🍎🥦Fruits & Légumes"
     }
